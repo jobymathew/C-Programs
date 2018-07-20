@@ -1,0 +1,38 @@
+#include<stdio.h>
+int main()
+{
+	int T,i,j,n[100],a[100],ar[100],c=0,k=0,f=0,f1=0,l=0;
+    scanf("%d",&T);
+    for(i=0;i<T;i++){   
+        scanf("%d",&n[i]);
+        for(j=0;j<n[i];j++){
+            scanf("%d",&a[j]);
+        }
+        k=0;
+        for(j=0;j<n[i]-1;j++){
+                 for(k=j+1;k<n[i];k++){
+                     if(a[j]<a[k]){
+                         f=1;
+                     }
+                 }
+                 if(f==0){
+                     for(l=j+1;l<n[i];l++){
+                     if(a[j]==a[l]){
+                         f1=1;
+                     }}
+                     if(f1==0){
+                     ar[c]=a[j];
+                     c++;
+                         }
+                 }f=0;f1=0;
+        }
+            int b=n[i]-1;
+            ar[c]=a[b];
+        
+        for(k=0;k<=c;k++){
+            printf("%d ",ar[k]);
+        }
+        printf("\n");c=0;
+    }
+	return 0;
+}
